@@ -26,4 +26,9 @@ Route::get('/player', 'PlayerController@index')->name('player')->middleware('pla
 // Route Backend
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('dashboard', ['as'=>'admin.index','uses'=>'AdminController@index']);
+
+    //group product
+    Route::group(['prefix' => 'product'], function(){
+        Route::get('list',['as' => 'admin.product.list','uses' => 'ProductController@getList']);
+    });
 });
