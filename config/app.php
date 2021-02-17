@@ -174,19 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        
-        /**
-         * My packages
-         */
-        Foostart\Acl\Authentication\AuthenticationServiceProvider::class,
-        Foostart\Category\CategoryServiceProvider::class,
-        Foostart\Post\PostServiceProvider::class,
-        Foostart\Slideshow\SlideshowServiceProvider::class,
-        Foostart\Product\ProductServiceProvider::class,
-        Foostart\Field\FieldServiceProvider::class,
-        Foostart\Sample\SampleServiceProvider::class,
-        Foostart\Filemanager\FilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -239,11 +226,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        
-        /**
-         * My aliases
-         */
-        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
