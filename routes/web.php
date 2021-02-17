@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/player', 'PlayerController@index')->name('player')->middleware('player');
+// Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
+
+// Route Backend
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
+    Route::get('dashboard', ['as'=>'admin.index','uses'=>'AdminController@index']);
+});
