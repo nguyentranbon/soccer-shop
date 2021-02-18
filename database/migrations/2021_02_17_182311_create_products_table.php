@@ -23,9 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('product_view');
             $table->integer('product_sale');
             $table->integer('product_type_id')->unsigned();
-            $table->foreign('product_type_id')->references('id')->on('product_types')->onUpdate('cascade');
             $table->integer('unit_id')->unsigned();
-            $table->foreign('unit_id')->references('id')->on('units')->onUpdate('cascade');
             $table->timestamps();
         });
     }

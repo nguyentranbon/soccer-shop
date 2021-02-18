@@ -19,7 +19,6 @@ class CreateProductTypesTable extends Migration
             $table->string('product_type_price');
             $table->string('product_type_description');
             $table->integer('tag_id')->unsigned();
-            $table->foreign('tag_id')->references('id')->on('tag')->onUpdate('cascade');
             $table->timestamps();
         });
     }
