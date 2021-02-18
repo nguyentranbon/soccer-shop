@@ -9,7 +9,7 @@
     <link href="{{ asset('backend/dist/css/styles.css') }}" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-
+    <script src="{{ asset('backend/ckeditor/ckeditor.js')}}"></script>
 </head>
 <body class="sb-nav-fixed">
     <!--navination -->
@@ -79,10 +79,10 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{!! URL::route('admin.product.list') !!}">Product</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Product Types</a>
+                                <a class="nav-link" href="#">Product Types</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Product Groups</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Unit</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Supplier</a>
+                                <a class="nav-link" href="{!! URL::route('admin.unit.list') !!}">Unit</a>
+                                <a class="nav-link" href="#">Supplier</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Shipment</a>
                             </nav>
                         </div>
@@ -108,7 +108,18 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('backend/dist/js/datatables-demo.js') }}"></script>
+
     
+
+    {{-- <script src="{{ asset('backend/ckeditor/plugins/autoembed/plugin.js')}}"></script>
+    <script src="{{ asset('backend/ckeditor/plugins/cloudservices/plugin.js')}}"></script> --}}
+    <script type="text/javascript">
+        $(document).ready(function(){ 
+            CKEDITOR.replace('txtUnit')
+        });
+    </script>
+
+    @include('sweetalert::alert')
 </body>
 
 </html>

@@ -36,8 +36,19 @@
                         <td>{!! $item->product_sku !!}</td>
                         <td>{!! $item->product_name !!}</td>
                         <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>
+                            <?php $unit = DB::table('units')->where('id',$item->unit_id)->first(); ?>
+                            @if(!empty($unit->unit_name))
+                            {!! $unit->unit_name} !!}
+                            @else
+                            {!! NULL !!}
+                            @endif
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn btn-primary" title="Add"><i class="fas fa-plus"></i></a>
+                            <a href="#" class="btn btn-warning" title="Update"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" class="btn btn-danger" title="Delete"><i class="far fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

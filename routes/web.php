@@ -31,4 +31,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::group(['prefix' => 'product'], function(){
         Route::get('list',['as' => 'admin.product.list','uses' => 'ProductController@getList']);
     });
+
+    // group unit
+    Route::group(['prefex' => 'unit'], function(){
+        Route::get('list', ['as' => 'admin.unit.list', 'uses' => 'UnitController@getList']);
+        Route::get('add', ['as' => 'admin.unit.getAdd', 'uses' => 'UnitController@getAdd']);
+        
+    });
 });
